@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/rjtax78/ci.git', branch: 'master'
+                git url: 'https://github.com/rjtax78/ci.git', branch: 'main'
             }
         }
         stage('Install Dependencies') {
