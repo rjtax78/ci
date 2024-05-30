@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/rjtax78/ci.git', branch: 'main'
+                git url: 'https://github.com/votre-nom-utilisateur/votre-repository.git', branch: 'main'
             }
         }
         stage('Install Dependencies') {
@@ -18,14 +18,14 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                sh 'npm test'
+                sh 'npm start'
             }
         }
     }
 
     post {
         always {
-            junit 'test-results.xml'
+            junit '**/jest-test-results.xml'
             archiveArtifacts artifacts: '**/coverage/**'
         }
         success {
